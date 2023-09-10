@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "playerlogger",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Player Logger",
+  "description": "Makes records of player interactions",
   "authors": [
-    "Turnip Labs"
+    "Wontairr"
   ],
   "contact": {
     "homepage": "",
     "sources": ""
   },
-
+  "icon": "assets/playerlogger/icon.png",
   "license": "CC0-1.0",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+      "wontairr.playerlogger.PlayerLogger"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+      "playerlogger.mixins.json"
   ],
 
   "depends": {

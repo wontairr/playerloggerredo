@@ -33,4 +33,4 @@ Template for making Babric mods for BTA!
 5. Lastly, open `File` > `Settings` and head to `Build, Execution, Development` > `Build Tools` > `Gradle`.  
    Make sure `Build and run using` and `Run tests using` is set to `Gradle`.
 
-6. Done! Now, all that's left is to change every mention of `examplemod` and `turniplabs` to your own mod id and mod group, respectively. Happy modding!
+6. Done! Now, all that's left is to change every mention of `playerlogger` and `turniplabs` to your own mod id and mod group, respectively. Happy modding!
