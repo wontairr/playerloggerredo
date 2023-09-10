@@ -2,7 +2,7 @@
 
 
 
-.txt are put in the **root** folder of the server/game
+The records are put in the **root** folder of the server/game as .txt files
 
 
 *Made using the BTA Fabric mod template*
