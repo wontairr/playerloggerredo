@@ -6,7 +6,8 @@
     "mixins": [
         "LoggerMixinChests",
         "LoggerMixinBlocks",
-        "LoggerMixinPlayer"
+        "LoggerMixinPlayer",
+        "LoggerMixinLavaItem"
     ],
     "client": [
     ],
