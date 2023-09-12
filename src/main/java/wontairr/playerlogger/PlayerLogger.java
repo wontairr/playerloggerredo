@@ -19,9 +19,18 @@ public class PlayerLogger implements ModInitializer {
 
     public static void logFile(String fileContents, String fileName) {
         try {
-            // Use FileWriter constructor with "true" to enable append mode
-            FileWriter myWriter = new FileWriter(fileName + ".txt", true);
+            // Specify the subdirectory and file name
+            String subdirectory = "player-logs";
+            String filePath = subdirectory + File.separator + fileName + ".txt";
 
+            // Create the subdirectory if it doesn't exist
+            File directory = new File(subdirectory);
+            if (!directory.exists()) {
+                directory.mkdirs(); // Create the directory and its parent directories if necessary
+            }
+
+            // Use FileWriter constructor with "true" to enable append mode
+            FileWriter myWriter = new FileWriter(filePath, true);
 
             myWriter.write("\n\n" + fileContents);
             myWriter.close();

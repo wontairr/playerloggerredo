@@ -26,7 +26,7 @@ public class LoggerMixinLavaItem {
         String eventLog = name + " used a bucket at: " + player.x + " " + player.y + " " + player.z + " ";
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  name + "_BlockPlaceRecord");
-        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  "FullBlockPlaceRecord");
+        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  name + "_BucketRecord");
+        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  "FullBucketRecord");
     }
 }
