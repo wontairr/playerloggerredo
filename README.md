@@ -2,7 +2,7 @@
 
 
 
-The records are put in the **root** folder of the server/game as .txt files
+The records are put in a subfolder called "player-logs" inside the **root** folder of the server/game as .txt files
 
 
 *Made using the BTA Fabric mod template*
