@@ -32,9 +32,9 @@ public class PlayerLogger implements ModInitializer {
             // Use FileWriter constructor with "true" to enable append mode
             FileWriter myWriter = new FileWriter(filePath, true);
 
-            myWriter.write("\n\n" + fileContents);
+            // changed sysout formatting -MilkFrog
+            myWriter.write(fileContents + "\n");
             myWriter.close();
-            System.out.println("Successfully appended to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
