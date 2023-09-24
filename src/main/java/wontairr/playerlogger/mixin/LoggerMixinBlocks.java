@@ -3,6 +3,7 @@ package wontairr.playerlogger.mixin;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.EntityLiving;
+import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.lang.Language;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -42,6 +43,22 @@ public abstract class LoggerMixinBlocks {
             PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  name + "_BlockPlaceRecord");
             PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  "FullBlockPlaceRecord");
         }
+    }
+
+    @Inject(at = @At("HEAD"), method = "onBlockClicked", remap = false)
+    public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player, CallbackInfo ci){
+        if(world == null) {return;}
+        String name = player.username;
+
+        String blockInQuestion = world.getBlock(x,y,z).toString();
+        int blockId = world.getBlock(x,y,z).id;
+        String eventLog = name + " clicked on a block of id '" + blockId + "' at: " + x + " " + y + " " + z + " ";
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        PlayerLogger.LOGGER.info(eventLog);
+        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  name + "_BlockClickRecord");
+        PlayerLogger.logFile(dtf.format(now) + " || " + eventLog,  "FullBlockClickRecord");
     }
 
     @Inject(at = @At("HEAD"), method = "onBlockDestroyedByExplosion", remap = false)
